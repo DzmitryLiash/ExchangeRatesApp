@@ -56,14 +56,38 @@
 		BE66D2A526937FC7005F03C5 /* ExchangeRatesApp */ = {
 			isa = PBXGroup;
 			children = (
+				BE9DA6C726B5850000C7C6C6 /* App */,
+				BE9DA6C926B5856000C7C6C6 /* Screens */,
+				BE9DA6C826B5854500C7C6C6 /* Resources */,
+			);
+			path = ExchangeRatesApp;
+			sourceTree = "<group>";
+		};
+		BE9DA6C726B5850000C7C6C6 /* App */ = {
+			isa = PBXGroup;
+			children = (
 				BE66D2A626937FC7005F03C5 /* AppDelegate.swift */,
 				BE66D2A826937FC7005F03C5 /* SceneDelegate.swift */,
-				BE66D2AA26937FC7005F03C5 /* ViewController.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		BE9DA6C826B5854500C7C6C6 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
 				BE66D2AF26937FC8005F03C5 /* Assets.xcassets */,
 				BE66D2B126937FC8005F03C5 /* LaunchScreen.storyboard */,
 				BE66D2B426937FC8005F03C5 /* Info.plist */,
 			);
-			path = ExchangeRatesApp;
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		BE9DA6C926B5856000C7C6C6 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				BE66D2AA26937FC7005F03C5 /* ViewController.swift */,
+			);
+			path = Screens;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -284,7 +308,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = FTBRR688DQ;
-				INFOPLIST_FILE = ExchangeRatesApp/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/ExchangeRatesApp/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -303,7 +327,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = FTBRR688DQ;
-				INFOPLIST_FILE = ExchangeRatesApp/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/ExchangeRatesApp/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

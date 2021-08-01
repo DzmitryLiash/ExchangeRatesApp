@@ -6,30 +6,31 @@
 //
 
 import UIKit
+import SnapKit
 
 class ViewController: UIViewController {
+    private let headerTitle = UILabel()
     
     lazy var collectionView:UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
-        layout.itemSize = CGSize(width: 300, height: 150)
+        layout.itemSize = CGSize(width: 260, height: 100)
         layout.minimumLineSpacing = 10
         layout.minimumInteritemSpacing = 10
         
-        let cv = UICollectionView()
+        let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
         cv.translatesAutoresizingMaskIntoConstraints = false
         cv.dataSource = self
         cv.delegate = self
+        cv.showsVerticalScrollIndicator = false
         cv.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "customCell")
         return cv
     }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.view.backgroundColor = UIColor.red
-        self.navigationItem.title = "Сurrent exchange rate"
-        self.navigationController?.navigationBar.prefersLargeTitles = true
+        view.backgroundColor = .white
+        setupSubviews()
     }
 }
 
@@ -47,9 +48,27 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate{
 
 extension ViewController {
     private func setupSubviews() {
+        view.addSubview(headerTitle)
         view.addSubview(collectionView)
         
+        headerTitle.snp.makeConstraints { make in
+            make.top.equalToSuperview().offset(30)
+            make.trailing.equalToSuperview().offset(-30)
+            make.leading.equalToSuperview().offset(30)
+        }
         
+        headerTitle.text = "Exchange rates"
+        headerTitle.font = UIFont.systemFont(ofSize: 30, weight: .bold)
+        headerTitle.textAlignment = .left
+        
+        collectionView.snp.makeConstraints { make in
+            make.top.equalTo(headerTitle.snp.bottom).offset(10)
+            make.trailing.equalToSuperview().offset(-20)
+            make.bottom.equalToSuperview().offset(0)
+            make.leading.equalToSuperview().offset(20)
+        }
+        
+        collectionView.backgroundColor = .none
     }
 }
 
